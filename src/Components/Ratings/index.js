@@ -22,7 +22,7 @@ const RatingComponent = () => {
             </TextContainer>
             <ImageContainer>
                 <div>
-                    
+                    <img src="" alt=""/>
                 </div>
             </ImageContainer>
         </Container>
