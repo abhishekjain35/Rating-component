@@ -6,9 +6,11 @@ const Container = styled.div`
     align-items: center;
     height: 100vh;
     width: 34vw;
-    // position: absolute; 
-    // right: -100px;
-    // overflow-x: hidden;
+    position: relative;
+    right: -10vw;
+    /* position: absolute; 
+    right: -100px;
+    overflow-x: hidden; */
 `;
 
 export default Container;
