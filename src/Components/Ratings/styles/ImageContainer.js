@@ -7,7 +7,7 @@ const Container = styled.div`
     height: 100vh;
     width: 34vw;
     position: relative;
-    right: -10vw;
+    right: -9vw;
     /* position: absolute; 
     right: -100px;
     overflow-x: hidden; */
