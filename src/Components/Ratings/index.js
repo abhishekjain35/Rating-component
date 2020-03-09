@@ -5,6 +5,7 @@ import ImageContainer from "./styles/ImageContainer";
 import img from "../../assets/images/hero.jpg";
 import MainImage from "./styles/MainImage";
 import { Img1, Img2, Img3, Img4 } from "./styles/RotatingImage";
+import ReviewSwitchContainer from "./styles/ReviewSwitchContainer";
 
 const RatingComponent = () => {
     return (
@@ -19,14 +20,16 @@ const RatingComponent = () => {
                         Tortor condimentum lacinia quis vel. Nibh praesent
                         tristique magna sit amet.
                     </p>
-                    <div>
-                        <h4>Naruto Uzumaki</h4>
-                        <h5>CEO, ABC Company</h5>
+                    <ReviewSwitchContainer>
                         <div>
-                          <button>------</button>
-                          <button>-></button>
+                            <h4>Naruto Uzumaki</h4>
+                            <h5>CEO, ABC Company</h5>
                         </div>
-                    </div>
+                        <div>
+                            <button>&#8592;</button>
+                            <button>--&#8594;</button>
+                        </div>
+                    </ReviewSwitchContainer>
                 </div>
             </TextContainer>
             <ImageContainer>
