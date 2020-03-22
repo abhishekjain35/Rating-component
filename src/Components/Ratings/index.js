@@ -4,10 +4,10 @@ import TextContainer from "./styles/TextContainer";
 import ImageContainer from "./styles/ImageContainer";
 import img from "../../assets/images/hero.jpg";
 import MainImage from "./styles/MainImage";
-import { Img1, Img2, Img3, Img4 } from "./styles/RotatingImage";
+import Img from "./styles/RotatingImage";
 import ReviewSwitchContainer from "./styles/ReviewSwitchContainer";
 
-const RatingComponent = () => {
+const RatingComponent = ({ images }) => {
     return (
         <Container>
             <TextContainer>
@@ -27,17 +27,16 @@ const RatingComponent = () => {
                         </div>
                         <div>
                             <button>&#8592;</button>
-                            <button>--&#8594;</button>
+                            <button>&#10230;</button>
                         </div>
                     </ReviewSwitchContainer>
                 </div>
             </TextContainer>
             <ImageContainer>
                 <MainImage src={img} alt="MainImage" />
-                <Img1 src={img} alt="RotatingImage" />
-                <Img2 src={img} alt="RotatingImage" />
-                <Img3 src={img} alt="RotatingImage" />
-                <Img4 src={img} alt="RotatingImage" />
+                {images.map((img, index) => (
+                    <Img rotate={index} src={img} key={index} />
+                ))}
             </ImageContainer>
         </Container>
     );
