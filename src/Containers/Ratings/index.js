@@ -7,15 +7,19 @@ import image4 from "../../assets/images/image4.png";
 import mainImage from "../../assets/images/hero.jpg";
 
 const RatingContainer = () => {
-  const imageArr = [mainImage, image1, image2, image3, image4];
-  const [activeImage, setImage] = useState(0);
-  const changeImageHandler = useCallback(e => {
-    // console.log(Number(e.target.name));
-    setImage(Number(e.target.name))
-  }, []);
-  return (
-    <RatingComponent changeImageHandler={changeImageHandler} activeImage={activeImage} imageArr={imageArr} />
-  );
+    const imageArr = [mainImage, image1, image2, image3, image4];
+    const [activeImage, setImage] = useState(0);
+    const changeImageHandler = useCallback(e => {
+        // console.log(Number(e.target.name));
+        setImage(Number(e.target.name));
+    }, []);
+    return (
+        <RatingComponent
+            changeImageHandler={changeImageHandler}
+            activeImage={activeImage}
+            imageArr={imageArr}
+        />
+    );
 };
 
 export default RatingContainer;

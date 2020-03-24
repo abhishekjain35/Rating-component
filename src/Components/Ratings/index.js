@@ -12,54 +12,62 @@ import ReviewSwitchContainer from "./styles/ReviewSwitchContainer";
 // import image4 from "../../assets/images/image4.png";
 
 const RatingComponent = ({ activeImage, changeImageHandler, imageArr }) => {
-  return (
-    <Container>
-      <TextContainer>
-        <div>
-          <h1>What my Clients say?</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut
-            enim blandit volutpat maecenas. Tortor condimentum lacinia quis vel.
-            Nibh praesent tristique magna sit amet.
-          </p>
-          <ReviewSwitchContainer>
-            <div>
-              <h4>Naruto Uzumaki</h4>
-              <h5>CEO, ABC Company</h5>
-            </div>
-            <div>
-              <button>&#8592;</button>
-              <button>&#10230;</button>
-            </div>
-          </ReviewSwitchContainer>
-        </div>
-      </TextContainer>
-      <ImageContainer>
-        <MainImage src={imageArr[activeImage]} alt="MainImage" />
-        {/* <Img1 src={imageArr[1]} alt="first" name={1} onClick={e => changeImageHandler(e)} />
+    return (
+        <Container>
+            <TextContainer>
+                <div>
+                    <h1>What my Clients say?</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Odio ut enim blandit volutpat maecenas.
+                        Tortor condimentum lacinia quis vel. Nibh praesent
+                        tristique magna sit amet.
+                    </p>
+                    <ReviewSwitchContainer>
+                        <div>
+                            <h4>Naruto Uzumaki</h4>
+                            <h5>CEO, ABC Company</h5>
+                        </div>
+                        <div>
+                            <button>&#8592;</button>
+                            <button>&#10230;</button>
+                        </div>
+                    </ReviewSwitchContainer>
+                </div>
+            </TextContainer>
+            <ImageContainer>
+                <MainImage src={imageArr[activeImage]} alt="MainImage" />
+                {/* <Img1 src={imageArr[1]} alt="first" name={1} onClick={e => changeImageHandler(e)} />
         <Img2 src={imageArr[2]} alt="second" name={2} onClick={e => changeImageHandler(e)} />
         <Img3 src={imageArr[3]} alt="second" name={3} onClick={e => changeImageHandler(e)} />
         <Img4 src={imageArr[4]} alt="second" name={4} onClick={e => changeImageHandler(e)} /> */}
 
-        {imageArr.map((src, index) => (
-          <Img
-            key={index}
-            src={src}
-            move={18 + index -4}
-            rotate={360 - (index + 2) * 53}
-            name={index}
-            onClick={e => changeImageHandler(e)}
-            // isActive={number == activeNum}
-          />
-        ))}
+                {imageArr
+                    .filter(t => {
+                        // console.log(imageArr.indexOf(t));
+                        return imageArr.indexOf(t) !== activeImage;
+                    })
+                    .map((src, index) => (
+                        <Img
+                            key={index}
+                            src={src}
+                            move={18 + index - 4}
+                            rotate={360 - (index + 2) * 53}
+                            name={index + 1}
+                            onClick={e => {
+                                changeImageHandler(e);
+                            }}
+                            // isActive={number == activeNum}
+                        />
+                    ))}
 
-        {/* {images.map((img, index) => (
+                {/* {images.map((img, index) => (
           <Img rotate={index} src={img} key={index} />
         ))} */}
-      </ImageContainer>
-    </Container>
-  );
+            </ImageContainer>
+        </Container>
+    );
 };
 
 export default RatingComponent;
