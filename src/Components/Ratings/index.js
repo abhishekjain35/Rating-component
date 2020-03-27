@@ -44,17 +44,17 @@ const RatingComponent = ({ activeImage, changeImageHandler, imageArr }) => {
         <Img4 src={imageArr[4]} alt="second" name={4} onClick={e => changeImageHandler(e)} /> */}
 
                 {imageArr
-                    .filter(t => {
-                        // console.log(imageArr.indexOf(t));
-                        return imageArr.indexOf(t) !== activeImage;
-                    })
+                    // .filter(t => {
+                    //     // console.log(imageArr.indexOf(t));
+                    //     return imageArr.indexOf(t) !== activeImage;
+                    // })
                     .map((src, index) => (
                         <Img
                             key={index}
                             src={src}
                             move={18 + index - 4}
                             rotate={360 - (index + 2) * 53}
-                            name={index + 1}
+                            name={index}
                             onClick={e => {
                                 changeImageHandler(e);
                             }}
